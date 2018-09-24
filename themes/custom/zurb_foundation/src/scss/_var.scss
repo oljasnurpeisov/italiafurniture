@@ -1,0 +1,20 @@
+// ====== Placeholder ======
+$placeholder-color: #000;
+
+// ===== sticky-footer =====
+$sticky-footer: false;
+$footer-height: 0;
+
+// === text-margin-reset ===
+$text-margin-reset: false;
+
+// ========= Grid ==========
+$lg: ('max-width:1400px');
+$md: ('max-width:1199px');
+$sm: ('max-width:991px');
+$xs: ('max-width:767px');
+
+@media ($lg) {}
+@media ($md) {}
+@media ($sm) {}
+@media ($xs) {}

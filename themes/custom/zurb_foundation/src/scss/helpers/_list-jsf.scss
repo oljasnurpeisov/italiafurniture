@@ -1,0 +1,22 @@
+@mixin list-jsf{
+  text-align: justify;
+  text-justify: distribute; // IE (11-)
+  line-height: 0;
+  &:after {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    content: "";
+    display: inline-block;
+  }
+  &>*{
+    border: 1px solid #000;
+    display: inline-block;
+    text-align: left;
+
+    /* Восстанавливаем обнулённые свойства */
+    line-height: normal;
+    font-size: 14px;
+  }
+}

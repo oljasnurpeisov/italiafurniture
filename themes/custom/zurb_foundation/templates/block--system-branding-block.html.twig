@@ -1,0 +1,42 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% block content %}
+  <div class="header-logo">
+      <div class="logo-info logo-info--left">
+          <div class="logo-info__title">Офис в России</div>
+          <!-- /.logo-info__title -->
+          <div class="logo-info__phone">+7-964-947-3005</div>
+          <!-- /.logo-info__phone -->
+          <div class="logo-info__mail">kseniya_20104@mail.ru</div>
+          <!-- /.logo-info__mail -->
+      </div>
+      <!-- /.logo-info -->
+      {% if site_logo %}
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+          <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+        </a>
+      {% endif %}
+      <div class="logo-info logo-info--right">
+          <div class="logo-info__title">Офис в Италии</div>
+          <!-- /.logo-info__title -->
+          <div class="logo-info__phone">+39-392-589-2700</div>
+          <!-- /.logo-info__phone -->
+          <div class="logo-info__mail">futurocasaitaly@gmail.com</div>
+          <!-- /.logo-info__mail -->
+      </div>
+      <!-- /.logo-info -->
+  </div>
+{% endblock %}

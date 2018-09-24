@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% set site_name = 'Futuro Casa' %}
+    <title>{{ site_name }} - {{ page_name }}</title>
+    <meta name="description" content="">
+
+    {% set version = '?v=' ~ random() %}
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/assets.css{{ version }}">
+    <link rel="stylesheet" href="css/style.css{{ version }}">
+</head>
+    <body>
+
+        {% include '../common/header/header.twig' %}
+
+        <div class="container-fluid">
+            <div class="page-wrap">
+
+
+                {% include '../common/aside-menu/aside-menu.twig' %}
+
+                <div class="content">
+                    {% block content %}{% endblock %}
+                </div>
+                <!-- /.content -->
+
+                {% include '../common/aside-news/aside-news.twig' %}
+
+            </div>
+            <!-- /.page-wrap -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+        {#{% include '../common/footer/footer.twig' %}#}
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/assets.js{{ version }}"></script>
+        <script src="js/main.js{{ version }}"></script>
+
+        <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+
+        <script src="js/yamap.js"></script>
+
+    </body>
+</html>
+
