@@ -422,3 +422,11 @@ function zurb_foundation_preprocess_links__language_block(&$variables) {
     ]);
   }
 }
+
+function zurb_foundation_preprocess_page_title(&$variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if ( ($node->bundle() == 'partner') && ($node->field_partner_logo) ) {
+      $variables['page_title_image'] = $node->get('field_partner_logo')->view('full');
+    }
+  }
+}

@@ -88,18 +88,28 @@
   {% endif %}
 <div class="product_main">
   <div class="slider-container portfolio-item--1">
-     <div class="fotorama" data-nav="thumbs" data-loop="true" data-allowfullscreen="true" data-keyboard="true">
+     <div class="fotorama" data-fit="scaledown" data-nav="thumbs" data-loop="true" data-allowfullscreen="true" data-keyboard="true">
        {{ content.field_image }} {{ content.field_images }}
      </div>
   </div>
 
-  <div class="portfolio-item--2">
-    {{ content|without('comment', 'links', 'field_tags', 'field_image', 'field_images', 'body') }}
+  <div class="description">
+    {{ content|without('comment', 'links', 'field_tags', 'field_image', 'field_images', 'field_catalog_link') }}
+  </div>
+  <div class="field-items info_block">
+    {% if content.field_catalog_link['#items'] is not empty %}
+      <a class="about-button" target="_blank" href="{{ file_url(node.field_catalog_link.entity.field_file.entity.uri.value) }}">
+        {{ 'Look in the catalog' | trans }}
+      </a>
+    {% endif %}
+    <button class="show_contactblock about-button">{{ "Request detailed information" | trans  }}</button>
+
+    <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="//yastatic.net/share2/share.js"></script>
+    <div style="margin-top: 15px;" class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,whatsapp,telegram" data-size="s"></div>
+
   </div>
 </div>
 
-<div class="description">
-  {{ content.body }}
-</div>
 
 </article>

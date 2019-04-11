@@ -13,8 +13,6 @@ global:
     app/js/vendor/bootstrap.min.js: {}
     app/js/assets.js: {}
     app/js/main.js: {}
-    //api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU: {}
-    app/js/yamap.js: {}
     /libraries/fotorama/fotorama.js: {}
 
   dependencies:
@@ -40,3 +38,10 @@ alert_close:
     - core/drupal
     - core/jquery
     - core/jquery.once
+yamap:
+  version: 1.x
+  js:
+    //api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU: {}
+    app/js/yamap.js: {}
+  dependencies:
+    - core/jquery

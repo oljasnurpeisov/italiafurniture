@@ -13,4 +13,17 @@ function zurb_foundation_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['submit']['#attributes']['class'][] = 'button';
     $form['actions']['submit']['#attributes']['class'][] = 'radius';
   }
+  add_placeholders($form);
+}
+
+/**
+ * Add placeholders to suitable form elements -> textfield, password, email, textarea
+ */
+function add_placeholders(&$element) {
+  if(isset($element['#type']) && in_array($element['#type'], ['textfield', 'password', 'email', 'textarea'])) {
+    $element['#attributes']['placeholder'] = $element['#title'].'...';
+  }
+  foreach(\Drupal\Core\Render\Element::children($element) as $key) {
+    add_placeholders($element[$key]);
+  }
 }

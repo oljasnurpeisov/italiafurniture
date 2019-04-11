@@ -145,10 +145,15 @@ class ContactForm extends ConfigEntityBundleBase implements ContactFormInterface
    */
   public function getRedirectUrl() {
     if ($this->redirect) {
-      $url = Url::fromUserInput($this->redirect);
+      if ($this->redirect == '<front>' || $this->redirect == '<current>') {
+        $url = Url::fromRoute($this->redirect);
+      }
+      else { 
+        $url = Url::fromUserInput($this->redirect);
+      }
     }
     else {
-      $url = Url::fromRoute('<front>');
+      $url = Url::fromRoute('<current>');
     }
     return $url;
   }

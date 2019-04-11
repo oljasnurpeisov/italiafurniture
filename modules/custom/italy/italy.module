@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for hooks provided by Views API.
+ */
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function italy_views_pre_view($view, $display_id, array &$args) {
+  if ($view->id() == 'products') {
+    if ($view->current_display == 'block_2') {
+      $current_node = \Drupal::routeMatch()->getParameter('node');
+      if (!empty($current_node)) {
+        $manufacturer = $current_node->field_manufacturer->entity->id();
+        $args[0] = $manufacturer;
+        $view->setArguments($args);
+      }
+    }
+  }
+}

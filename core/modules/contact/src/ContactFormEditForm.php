@@ -108,7 +108,7 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
       '#title' => $this->t('Redirect path'),
       '#convert_path' => PathElement::CONVERT_NONE,
       '#default_value' => $contact_form->getRedirectPath(),
-      '#description' => $this->t('Path to redirect the user to after submission of this form. For example, type "/about" to redirect to that page. Use a relative path with a slash in front.'),
+      '#description' => $this->t('Path to redirect the user to after submission of this form. For example, type "/about" to redirect to that page. Use a relative path with a slash in front. The special paths %front and %current are allowed. Leave blank to redirect to the current page.', ['%front' => '<front>', '%current' => '<current>']),
     ];
     $form['reply'] = [
       '#type' => 'textarea',
@@ -149,7 +149,7 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
     $form_state->setValue('recipients', $recipients);
     $redirect_url = $form_state->getValue('redirect');
     if ($redirect_url && $this->pathValidator->isValid($redirect_url)) {
-      if (mb_substr($redirect_url, 0, 1) !== '/') {
+      if ($redirect_url != '<front>' && $redirect_url != '<current>' && mb_substr($redirect_url, 0, 1) !== '/') {
         $form_state->setErrorByName('redirect', $this->t('The path should start with /.'));
       }
     }

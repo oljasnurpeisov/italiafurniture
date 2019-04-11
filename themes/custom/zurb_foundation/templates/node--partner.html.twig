@@ -88,13 +88,13 @@
   {% endif %}
 
   <div class="slider-container portfolio-item--1">
-     <div class="fotorama" data-nav="thumbs" data-loop="true" data-allowfullscreen="true" data-keyboard="true">
+     <div class="fotorama" data-thumbfit="scaledown" data-nav="thumbs" data-loop="true" data-allowfullscreen="true" data-keyboard="true">
        {{ content.field_image }} {{ content.field_images }}
      </div>
   </div>
 
   <div class="description">
-    {{ content|without('comment', 'links', 'field_tags', 'field_image', 'field_images') }}
+    {{ content|without('comment', 'links', 'field_tags', 'field_image', 'field_images', 'field_partner_logo') }}
   </div>
 
 </article>

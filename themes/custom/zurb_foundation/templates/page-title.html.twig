@@ -15,7 +15,11 @@
 {{ title_prefix }}
 {% if title %}
   <div class="page-header">
-    <h1{{ title_attributes }}>{{ title }}</h1>
+    {% if page_title_image|render is not empty %}
+        <h1{{ title_attributes }}>{{ page_title_image }}</h1>
+    {% else %}
+      <h1{{ title_attributes }}>{{ title }}</h1>
+    {% endif %}
   </div>
 {% endif %}
 {{ title_suffix }}

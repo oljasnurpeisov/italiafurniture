@@ -5,15 +5,15 @@ ymaps.ready(init);
 function init () {
 
     myMap = new ymaps.Map('map_1', {
-        center:[38.00998766783103,13.600574031646696],
-        zoom:18
+        center:[43.904388, 12.859186],
+        zoom:17
     });
     var myPlacemark11 = new ymaps.Placemark(
-        [38.00998766783103,13.600574031646696], {
+        [43.904388, 12.859186], {
             balloonContent: 'ул. Ставропольская, 132',
             hintContent: 'ул. Ставропольская, 132'
         }, {
-            iconImageHref: 'img/design/map_marker.svg',
+            iconImageHref: '/sites/default/files/img/design/map_marker.svg',
             iconImageSize: [23, 32],
             iconImageOffset: [-20, -50]
         }
@@ -32,7 +32,7 @@ function init () {
             balloonContent: 'ул. Ставропольская, 132',
             hintContent: 'ул. Ставропольская, 132'
         }, {
-            iconImageHref: 'img/design/map_marker.svg',
+            iconImageHref: '/sites/default/files/img/design/map_marker.svg',
             iconImageSize: [23, 32],
             iconImageOffset: [-20, -50]
         }
