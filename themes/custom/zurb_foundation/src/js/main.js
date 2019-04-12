@@ -56,3 +56,14 @@
     }
   }
 })(jQuery, Drupal);
+
+(function ($, Drupal) {
+  Drupal.behaviors.catalogSlider = {
+    attach: function (context, settings) {
+      $('.jsModalClose').on('click', function(){
+    		$('.jsModal').removeClass('opened');
+    		$('body').removeClass('modal-open');
+  	  });
+    }
+  }
+})(jQuery, Drupal);

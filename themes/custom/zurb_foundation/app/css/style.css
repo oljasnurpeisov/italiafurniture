@@ -2125,14 +2125,17 @@ body:after
 {
     display: flex;
 }
-
-.modal__frame
+.modal.modal_document .modal__inner
+{
+    width: 1200px; 
+    padding: 0;
+}
+.modal .modal__frame
 {
     width: 100%;
     height: calc(100vh - 120px);
 }
-
-.modal__bg
+.modal .modal__bg
 {
     position: absolute;
     z-index: 0; 
@@ -2143,8 +2146,7 @@ body:after
 
     background: rgba(0, 0, 0, .4);
 }
-
-.modal__close
+.modal .modal__close
 {
     position: absolute;
     top: 0;
@@ -2160,22 +2162,19 @@ body:after
 
     background: url(../img/sprite.png) 0 -22px;
 }
-
 @media (max-width: 1440px)
 {
-    .modal__close
+    .modal .modal__close
     {
         top: -30px; 
         right: 0;
     }
 }
-
-.modal__close:hover
+.modal .modal__close:hover
 {
     opacity: .7;
 }
-
-.modal__inner
+.modal .modal__inner
 {
     position: relative;
     z-index: 1;
@@ -2185,16 +2184,14 @@ body:after
 
     background: #fff;
 }
-
-.modal__inner--message
+.modal .modal__inner--message
 {
     width: 820px;
     padding: 60px 80px 60px 60px;
 }
-
 @media (max-width: 1023px)
 {
-    .modal__inner--message
+    .modal .modal__inner--message
     {
         width: 90%;
         margin: 0 auto;
