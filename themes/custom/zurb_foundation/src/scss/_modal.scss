@@ -1,0 +1,82 @@
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: none;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  &.opened {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.modal__frame {
+  width: 100%;
+  height: -webkit-calc(100vh - 120px);
+  height: calc(100vh - 120px);
+}
+.modal__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.modal__close {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url(../img/sprite.png) 0px -22px;
+  position: absolute;
+  top: 0;
+  right: -30px;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  cursor: pointer;
+}
+@media (max-width: 1440px) {
+  .modal__close {
+    right: 0;
+    top: -30px;
+  }
+}
+.modal__close:hover {
+  opacity: .7;
+}
+.modal__inner {
+  position: relative;
+  z-index: 1;
+  width: 557px;
+  background: #fff;
+  padding: 40px 60px;
+}
+.modal__inner--message {
+  width: 820px;
+  padding: 60px 80px 60px 60px;
+}
+@media (max-width: 1023px) {
+  .modal__inner--message {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+  }
+}
