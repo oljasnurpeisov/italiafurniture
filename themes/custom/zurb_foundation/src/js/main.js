@@ -39,3 +39,20 @@
     }
   }
 })(jQuery, Drupal);
+
+(function ($, Drupal) {
+  Drupal.behaviors.jsDocLink = {
+    attach: function (context, settings) {
+      $('.catalog-item').click(function (e) {
+      		e.preventDefault();
+
+      		$('.jsModal[data-type=document-view]').addClass('opened');
+      		$('body').addClass('modal-open');
+
+      		$('.jsModalFrame').attr('src','https://docs.google.com/viewer?url=' + this.href + '&embedded=true');
+
+      		return false;
+      	});
+    }
+  }
+})(jQuery, Drupal);
