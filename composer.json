@@ -18,7 +18,8 @@
         "drupal/contact_block": "^1.4",
         "drupal/simple_popup_blocks": "^1.2",
         "drupal/swiftmailer": "^1.0",
-        "drupal/composer_manager": "^1.0"
+        "drupal/composer_manager": "^1.0",
+        "drupal/gdoc_field": "^1.1"
     },
     "replace": {
         "drupal/core": "^8.6"
