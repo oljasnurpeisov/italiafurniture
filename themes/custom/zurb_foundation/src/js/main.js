@@ -40,6 +40,18 @@
   }
 })(jQuery, Drupal);
 
+
+(function ($, Drupal) {
+  Drupal.behaviors.jsDocRemoveLink = {
+    attach: function (context, settings) {
+      $('.jsModalClose').on('click', function(){
+    		$('.jsModal[data-type=document-view]').removeClass('opened');
+    		$('body').removeClass('modal-open');
+  	  });
+    }
+  }
+})(jQuery, Drupal);
+
 (function ($, Drupal) {
   Drupal.behaviors.jsDocLink = {
     attach: function (context, settings) {
@@ -53,17 +65,6 @@
 
       		return false;
       	});
-    }
-  }
-})(jQuery, Drupal);
-
-(function ($, Drupal) {
-  Drupal.behaviors.catalogSlider = {
-    attach: function (context, settings) {
-      $('.jsModalClose').on('click', function(){
-    		$('.jsModal').removeClass('opened');
-    		$('body').removeClass('modal-open');
-  	  });
     }
   }
 })(jQuery, Drupal);
