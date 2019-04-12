@@ -43,7 +43,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.jsDocLink = {
     attach: function (context, settings) {
-      $('.catalog-item').click(function (e) {
+      $('.jsDocLink').click(function (e) {
       		e.preventDefault();
 
       		$('.jsModal[data-type=document-view]').addClass('opened');
