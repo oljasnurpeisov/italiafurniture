@@ -16,7 +16,7 @@
     content: url("/src/img/design/ico/line.svg");
     position: absolute;
     top: 120px;
-    right: -4px;
+    right: -3px;
     @media ($sm) {
       display: none;
     }
@@ -90,4 +90,12 @@
     color: #4A4A49;
     font-size: 22px;
   }
+}
+
+#main
+  .field-item {
+    text-align: justify;
+    img {
+        margin-left: 10px;
+    }
 }

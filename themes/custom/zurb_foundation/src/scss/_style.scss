@@ -185,6 +185,9 @@
   line-height: 45px;
   transition: .3s;
   position: relative;
+  a {
+    display: block;
+  }
   @media ($xs) {
     width: 100%;
   }

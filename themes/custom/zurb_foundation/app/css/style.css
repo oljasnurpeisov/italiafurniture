@@ -2396,6 +2396,10 @@ body:after
     border: 1px solid #d8b86e;
     border-radius: 12px;
 }
+.services-all-item a
+{
+    display: block;
+}
 @media (max-width: 767px)
 {
     .services-all-item
@@ -4411,7 +4415,7 @@ yx-axis
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail
 {
-    transition: width .2s ease-out .2s, height .2s ease-out .2s,    margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,    margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,    opacity .2s ease-in-out, background-color .2s ease-in-out;
+    transition: width .2s ease-out .2s, height .2s ease-out .2s,    margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,    margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,    opacity .2s ease-in-out, background-color .2s ease-in-out;
 }
 
 /*
@@ -6298,8 +6302,8 @@ yx-axis
     right: 0;
     bottom: 0;
 
-    overflow: hidden;/*overflow: scroll;*/
-    
+    overflow: hidden;
+
     min-height: 100vh;
     padding: 40px 15px 0;
 
@@ -6573,15 +6577,11 @@ yx-axis
     color: #4a4a49;
 }
 
-#main .field-item {
+#main .field-item
+{
     text-align: justify;
 }
-
-#main .field-item img {
-    margin-left: 10px;
-}
-
-.services-all .services-all-item a
+#main .field-item img
 {
-    display: block;
+    margin-left: 10px;
 }
