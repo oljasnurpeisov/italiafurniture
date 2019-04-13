@@ -6619,10 +6619,8 @@ yx-axis
 
 .footer
 {
-    position: absolute;
-    right: 0; 
+    position: fixed;
     bottom: 30px;
-    left: 0;
 }
 
 .copyright
