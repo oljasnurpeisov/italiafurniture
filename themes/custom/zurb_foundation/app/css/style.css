@@ -2936,7 +2936,10 @@ body:after
     margin-top: 25px;
     margin-bottom: -15px;
 
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 @media (max-width: 1199px)
 {
@@ -2955,6 +2958,7 @@ body:after
     position: relative;
 
     width: 30%;
+    margin: 0 20px; 
 
     cursor: pointer;
     transition: .3s;

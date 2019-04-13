@@ -424,7 +424,10 @@
 
 .design-tabs{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   margin-top: 25px;
   margin-bottom: -15px;
   z-index: 2;
@@ -444,6 +447,7 @@
     line-height: 45px;
     transition: .3s;
     background: #fff;
+    margin: 0 20px;
     @media ($md) {
       width: 250px;
       margin: 0 auto 15px;
