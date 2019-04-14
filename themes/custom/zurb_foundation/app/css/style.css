@@ -3823,7 +3823,8 @@ body:after
 {
     .subject .show_contactblock
     {
-        display: none !important;
+        /* display: none!important; */
+        margin-left: 0 !important;
     }
 }
 
@@ -3884,6 +3885,18 @@ body:after
     padding: 0;
 
     border: 0;
+}
+@media (max-width: 991px)
+{
+    .spb_center
+    {
+        top: 113px;
+        left: 0;
+
+        max-width: 100%;
+        height: 100vh; 
+        margin: 0;
+    }
 }
 
 .spb_close
@@ -3953,6 +3966,14 @@ body:after
     border-bottom: 1px solid #c5625e;
     background: #fff;
 }
+@media (max-width: 991px)
+{
+    #block-contactblock h2
+    {
+        margin: 0;
+        padding: 10px 25px;
+    }
+}
 #block-contactblock form
 {
     padding: 25px 25px 30px 25px;
@@ -4014,6 +4035,14 @@ body:after
     padding-bottom: 10px;
 
     resize: vertical;
+}
+@media (max-width: 991px)
+{
+    #block-contactblock form .js-form-item textarea,
+    #block-contactblock form .js-form-item textarea.form-control
+    {
+        height: 60px;
+    }
 }
 #block-contactblock form .js-form-item input:focus,
 #block-contactblock form .js-form-item textarea:focus,

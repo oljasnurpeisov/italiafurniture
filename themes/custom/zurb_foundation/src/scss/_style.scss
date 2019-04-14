@@ -922,7 +922,8 @@
   }
   .show_contactblock {
     @media ($xs) {
-      display: none!important;
+      /* display: none!important; */
+      margin-left: 0!important;
     }
   }
   .info_block {
@@ -965,6 +966,13 @@
   margin-top: -250px;
   padding: 0;
   border: 0;
+  @media ($sm) {
+    margin: 0;
+    left: 0;
+    top: 113px;
+    max-width: 100%;
+    height: 100vh;
+  }
 }
 .spb_close {
   position: absolute;
@@ -1014,6 +1022,10 @@
     font-weight: 300;
     color: #555;
     line-height: 30px;
+    @media ($sm) {
+      margin: 0;
+      padding: 10px 25px;
+    }
   }
   form {
     padding: 25px 25px 30px 25px;
@@ -1058,6 +1070,9 @@
         line-height: 30px;
         height: 100px;
         resize: vertical;
+        @media ($sm) {
+          height: 60px;
+        }
       }
       input:focus,
       textarea:focus,
