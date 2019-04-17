@@ -72,7 +72,7 @@
       <div class="catalog-item__title">{{ label }}</div>
       <!-- /.catalog-item__title -->
       <div class="catalog-item__img">
-          {{ content.field_image }}
+          {{ content.field_image|render|striptags('<img>')|raw }}
       </div>
       <!-- /.catalog-item__img -->
   </a>
