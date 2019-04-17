@@ -33,9 +33,10 @@
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'frontpage',
   ]
 %}
-<div class="frontpage">
+<div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title }}
   {{ title_suffix }}

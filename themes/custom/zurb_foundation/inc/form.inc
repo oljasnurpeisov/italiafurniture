@@ -7,7 +7,7 @@
  * @param $form_id
  */
 function zurb_foundation_form_alter(&$form, &$form_state, $form_id) {
-  // Sexy submit buttons
+  // Simple submit buttons
   if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
     $form['actions']['submit']['#attributes']['class'][] = 'success';
     $form['actions']['submit']['#attributes']['class'][] = 'button';
@@ -21,7 +21,9 @@ function zurb_foundation_form_alter(&$form, &$form_state, $form_id) {
  */
 function add_placeholders(&$element) {
   if(isset($element['#type']) && in_array($element['#type'], ['textfield', 'password', 'email', 'textarea'])) {
-    $element['#attributes']['placeholder'] = $element['#title'].'...';
+    if (isset($element['#title'])) {
+      $element['#attributes']['placeholder'] = $element['#title'].'...';
+    }
   }
   foreach(\Drupal\Core\Render\Element::children($element) as $key) {
     add_placeholders($element[$key]);
