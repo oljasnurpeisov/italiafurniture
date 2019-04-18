@@ -75,12 +75,12 @@
   {% if not page %}
       <a href="{{ url }}" rel="bookmark" class="news-item__title">{{ label }}</a>
   {% endif %}
-  {% if content.field_news_image %}
-    {{ content.field_news_image }}
+  {% if content.field_image %}
+    {{ content.field_image }}
   {% endif %}
   {# We hide the comments and links now so that we can render them later. #}
   <div class="news-item__text">
-    {{ content|without('field_news_image') }}
+    {{ content.body }}
   </div>
   <div class="news-item__more">
       {{ 'Expand' | trans }}
