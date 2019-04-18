@@ -4213,8 +4213,18 @@ body
 .block-views-exposed-filter-blockfrontpage-partners
 {
     position: absolute;
-    z-index: 10001; 
+    z-index: 10001;
     top: 44px;
+
+    width: 27px;
+    height: 27px; 
+    padding-left: 27px;
+
+    background: url(../img/sprite.png) 27px -4px;
+}
+.block-views-exposed-filter-blockfrontpage-partners input
+{
+    padding-left: 10px;
 }
 .block-views-exposed-filter-blockfrontpage-partners ::-webkit-input-placeholder
 {

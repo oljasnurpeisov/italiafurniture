@@ -1177,6 +1177,13 @@ body {
   position: absolute;
   top: 44px;
   z-index: 10001;
+  background: url(../img/sprite.png) 27px -4px;
+  width: 27px;
+  padding-left: 27px;
+  height: 27px;
+  input {
+    padding-left: 10px;
+  }
   ::placeholder {
     color: #b8b8b4;
   }

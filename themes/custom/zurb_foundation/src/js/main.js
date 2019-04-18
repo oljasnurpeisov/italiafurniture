@@ -127,9 +127,8 @@
             var $this = $(this),
                 _$fotorama = $body.data('$fotorama');
 
-            fotorama
-                // show needed frame
-                .show({index: $this.attr('src'), time: _$fotorama ? 300 : 0, slow: t.altKey, direct: true});
+            fotorama.show({index: $this.attr('src'), time: _$fotorama ? 300 : 0, slow: t.altKey, direct: true}),
+            fotorama.setOptions({maxheight: "80%", maxwidth: "100%"});
 
             if (_$fotorama) return;
 
