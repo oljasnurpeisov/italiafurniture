@@ -1188,3 +1188,12 @@ body {
     color: #b8b8b4;
   }
 }
+.full_news {
+  .thumbs {
+    display: block;
+    float: unset;
+    margin: auto;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
