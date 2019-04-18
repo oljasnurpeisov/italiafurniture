@@ -1739,7 +1739,7 @@ body:before
     top: 0;
     left: 0; 
 
-    width: 400px;
+    width: 300px;
     height: 100%;
 
     content: '';
@@ -1760,7 +1760,7 @@ body:after
     top: 0;
     right: 0; 
 
-    width: 400px;
+    width: 300px;
     height: 100%;
 
     content: '';
@@ -4198,7 +4198,6 @@ body
 .thumbs img
 {
     width: auto;
-    height: 72px;
 
     cursor: pointer; 
 
@@ -4209,6 +4208,29 @@ body
 .thumbs a:hover img
 {
     border-color: #00afea;
+}
+
+.block-views-exposed-filter-blockfrontpage-partners
+{
+    position: absolute;
+    z-index: 10001; 
+    top: 44px;
+}
+.block-views-exposed-filter-blockfrontpage-partners ::-webkit-input-placeholder
+{
+    color: #b8b8b4;
+}
+.block-views-exposed-filter-blockfrontpage-partners :-ms-input-placeholder
+{
+    color: #b8b8b4;
+}
+.block-views-exposed-filter-blockfrontpage-partners ::-ms-input-placeholder
+{
+    color: #b8b8b4;
+}
+.block-views-exposed-filter-blockfrontpage-partners ::placeholder
+{
+    color: #b8b8b4;
 }
 
 .mCustomScrollbar

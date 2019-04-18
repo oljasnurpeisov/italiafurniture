@@ -69,85 +69,119 @@
   }
 })(jQuery, Drupal);
 
+
 (function ($, Drupal) {
   Drupal.behaviors.FotoramaLightbox = {
     attach: function (context, settings) {
-      function t() {
-          $(".fotorama").each(function() {
-              var t = $(this).data("fotorama").data;
-              $(this).find(".fotorama__stage__frame").each(function(e) {
-                  var o = $(this).width();
-                  img = t[e].img, 767 > o && t[e].sm && (img = t[e].sm), 510 > o && t[e].xs && (img = t[e].xs), $(this).children("img").attr("src", img)
-              })
-          })
-      }
       $(function () {
+        var $document = $(document),
+            $window = $(window),
+            $body = $('body');
 
-        var e = $(window),
-            o = $("body"),
-            i = function(a, t) {
-                a.data("open") ? a.stop().css({
-                    marginTop: -30,
-                    left: o.width() / 2 - a.width() / 2,
-                    top: e.scrollTop() + e.height() / 2 - a.height() / 2 - 20
-                }).animate({
-                    marginTop: 0,
-                    opacity: 1
-                }, t || 0) : a.css({
-                    left: -99999,
-                    top: -99999
-                })
+            var placeFotorama = function ($fotorama, time) {
+              if ($fotorama.data('open')) {
+                $fotorama
+                    .stop()
+                    .css({marginTop: -30, left: $body.width() / 2 - $fotorama.width() / 2, top: $window.scrollTop() + $window.height() / 2 - $fotorama.height() / 2 - 20})
+                    .animate({marginTop: 0, opacity: 1}, time || 0);
+              } else {
+                $fotorama.css({left: -99999, top: -99999});
+              }
             },
-            s = function() {
-                var a = o.data("$fotorama");
-                a && (o.removeClass("overflow-hidden").data("$fotorama", null), a.stop().animate({
-                    marginTop: 30,
-                    opacity: 0
-                }, 300, function() {
-                    i(a.data("open", !1))
-                }))
-            };
-        $(".thumbs").each(function() {
-            var n = $(this),
-                r = $(".fotorama", n);
-            $fotorama = r.clone().addClass("fotorama-lightbox").data("allow-full-screen", "true").data("nav", "dots").data("arrows", "true").data("click", "true").appendTo("body").fadeTo(0, 0).fotorama(), fotorama = $fotorama.data("fotorama"), r.fotorama(), i($fotorama);
-            for (var l = 0, c = fotorama.data.length; c > l; l++) fotorama.data[l].id = fotorama.data[l].img;
-            $fotorama.on("click", function(a) {
-                a.stopPropagation()
-            }), n.on("click", ".fotorama__stage .fotorama__img", function(t) {
-                t.preventDefault(), t.stopPropagation();
-                var e = $(this),
-                    s = o.data("$fotorama");
-                fotorama.show({
-                    index: e.attr("src"),
-                    time: s ? 300 : 0,
-                    slow: t.altKey
-                }), fotorama.setOptions({
-                    height: "80%",
-                    maxwidth: "100%"
-                }), s || (o.addClass("overflow-hidden").data("$fotorama", $fotorama), $fotorama.css({
-                    left: e.offset().left,
-                    top: e.offset().top
-                }), i($fotorama.data("open", !0), 300))
-            }), t(), e.on("resize", function() {
-                i($fotorama), t()
-            }), $(document).on("click", s).on("keydown", function(a) {
-                var t = o.data("$fotorama");
-                if (t) {
-                    var e = t.data("fotorama");
-                    27 === a.keyCode ? (a.preventDefault(), s()) : 39 === a.keyCode ? e.show({
-                        index: ">",
-                        slow: a.altKey,
-                        direct: !0
-                    }) : 37 === a.keyCode && (a.preventDefault(), e.show({
-                        index: "<",
-                        slow: a.altKey,
-                        direct: !0
-                    }))
+        s = function() {
+            var a = $body.data("$fotorama");
+            a && ($body.removeClass("overflow-hidden").data("$fotorama", null), a.stop().animate({
+                marginTop: 30,
+                opacity: 0
+            }, 300, function() {
+                placeFotorama(a.data("open", !1))
+            }))
+        };
+
+        // take all .fotorama blocks
+        $('.thumbs').each(function () {
+          var $thumbs = $(this),
+          r = $(".fotorama", $thumbs);
+          $fotorama = r.clone()
+            .addClass('fotorama-lightbox')
+            .data("allow-full-screen", "true")
+            .data("nav", "dots")
+            .data("arrows", "true")
+            .data("click", "true")
+            .appendTo('body')
+            .fadeTo(0, 0)
+            .fotorama(),
+          fotorama = $fotorama.data("fotorama"), r.fotorama(), placeFotorama($fotorama);
+          for (var _i = 0, _l = fotorama.data.length; _i < _l; _i++) {
+            // prepare id to use in fotorama.show()
+            fotorama.data[_i].id = fotorama.data[_i].img;
+          }
+
+          // bind clicks
+          $fotorama.on('click', function (e) {
+            e.stopPropagation();
+          }), $thumbs.on('click', '.fotorama__stage .fotorama__img', function(t) {
+            t.preventDefault();
+            t.stopPropagation();
+
+            var $this = $(this),
+                _$fotorama = $body.data('$fotorama');
+
+            fotorama
+                // show needed frame
+                .show({index: $this.attr('src'), time: _$fotorama ? 300 : 0, slow: t.altKey, direct: true});
+
+            if (_$fotorama) return;
+
+            $body
+                .addClass('overflow-hidden')
+                .data('$fotorama', $fotorama);
+
+            $fotorama.css({left: $this.offset().left, top: $this.offset().top});
+            placeFotorama($fotorama.data('open', true), 300);
+          });
+
+          $window.on('resize', function () {
+            placeFotorama($fotorama);
+          });
+
+          var closeFotorama = function () {
+            var $fotorama = $body.data('$fotorama');
+
+            if (!$fotorama) return;
+            $body
+                .removeClass('overflow-hidden')
+                .data('$fotorama', null);
+            $fotorama
+                .stop()
+                .animate({marginTop: 30, opacity: 0}, 300, function () {
+                  placeFotorama($fotorama.data('open', false));
+                });
+          };
+
+          $document
+              .on('click', closeFotorama)
+              .on('keydown', function (e) {
+                var $fotorama = $body.data('$fotorama');
+
+                if (!$fotorama) return;
+
+                var fotorama = $fotorama.data('fotorama');
+
+                if (e.keyCode === 27) {
+                  e.preventDefault();
+                  s();
+                } else if (e.keyCode === 39) {
+                  fotorama.show({index: '>', slow: e.altKey, direct: true});
+                } else if (e.keyCode === 37) {
+                  e.preventDefault();
+                  fotorama.show({index: '<', slow: e.altKey, direct: true});
                 }
-            }), $fotorama.on("fotorama:fullscreenenter", function(a, t) {
-                t.cancelFullScreen(), s()
-            })
+              });
+
+          $fotorama.on('fotorama:fullscreenenter', function (e, fotorama) {
+            fotorama.cancelFullScreen(), s()
+          });
         });
 
       });

@@ -68,7 +68,7 @@
  */
 #}
 
-<div id="node-{{ node.id }}" class="news-item">
+<div id="node-{{ node.id }}" class="news-item" {{ attributes }}>
   <div class="news-item__date">
       {{ node.createdTime|date(format='d.m.Y') }}
   </div>

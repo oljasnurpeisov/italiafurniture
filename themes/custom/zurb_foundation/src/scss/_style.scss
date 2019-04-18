@@ -1165,7 +1165,6 @@ body {
 }
 .thumbs img {
   width: auto;
-  height: 72px;
   border: 2px #fff solid;
   box-shadow: 0 0 3px rgba(0,0,0,0.5);
   cursor: pointer;
@@ -1173,4 +1172,12 @@ body {
 
 .thumbs a:hover img {
   border-color: #00afea;
+}
+.block-views-exposed-filter-blockfrontpage-partners {
+  position: absolute;
+  top: 44px;
+  z-index: 10001;
+  ::placeholder {
+    color: #b8b8b4;
+  }
 }
