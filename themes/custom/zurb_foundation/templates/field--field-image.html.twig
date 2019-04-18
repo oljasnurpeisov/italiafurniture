@@ -38,7 +38,5 @@
 #}
 
 {% for item in items %}
-<a href="{{ file_url(item.content['#item'].entity.uri.value) }}">
 {{ item.content }}
-</a>
 {% endfor %}
