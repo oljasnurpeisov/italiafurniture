@@ -6535,13 +6535,17 @@ yx-axis
     right: 0;
     bottom: 0;
 
-    overflow: hidden;
+    display: flex; 
 
     min-height: 100vh;
     padding: 40px 15px 0;
 
-    border-left: 2px dotted rgba(147, 139, 131, .3); 
+    border-left: 2px dotted rgba(147, 139, 131, .3);
     background: #fbf4ec;
+}
+.aside-news :first-child
+{
+    overflow: scroll;
 }
 @media (max-width: 991px)
 {
@@ -6702,7 +6706,7 @@ yx-axis
 {
     position: absolute;
     top: 120px;
-    right: -3px; 
+    right: -4px; 
 
     content: url('../img/design/ico/line.svg');
 }

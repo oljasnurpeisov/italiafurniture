@@ -7,8 +7,11 @@
   padding: 40px 15px 0;
   background: #fbf4ec;
   min-height: 100vh;
-  overflow: hidden;
   border-left: 2px dotted rgba(147, 139, 131, 0.3);
+  display: flex;
+  :first-child {
+    overflow: scroll;
+  }
   @media ($sm) {
     position: static;
     width: 100%;
