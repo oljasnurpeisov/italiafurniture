@@ -108,6 +108,7 @@
             .data("nav", "dots")
             .data("arrows", "true")
             .data("click", "true")
+            .data("allowfullscreen", "native")
             .appendTo('body')
             .fadeTo(0, 0)
             .fotorama(),
@@ -118,9 +119,9 @@
           }
 
           // bind clicks
-          $fotorama.on('click', function (e) {
+          $fotorama.on('click touchstart', function (e) {
             e.stopPropagation();
-          }), $thumbs.on('click', '.fotorama__stage .fotorama__img', function(t) {
+          }), $thumbs.on('click touchstart', '.fotorama__stage .fotorama__img', function(t) {
             t.preventDefault();
             t.stopPropagation();
 
