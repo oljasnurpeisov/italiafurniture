@@ -4251,7 +4251,8 @@ body
     color: #b8b8b4;
 }
 
-.full_news .thumbs
+.full_news .thumbs,
+.portfolio .thumbs
 {
     display: block;
     float: unset;
