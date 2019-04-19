@@ -21,16 +21,12 @@ use Drupal\Core\Link;
  */
 function zurb_foundation_preprocess_breadcrumb(&$variables) {
   if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
-    $variables['title_new'] = $node->getTitle();
-  }
-  $route = \Drupal::routeMatch();
-  if ($route->getRouteName() == 'entity.taxonomy_term.canonical' && $variables['breadcrumb']) {
-    $term_id = $route->getRawParameter('taxonomy_term');
-    $term = Term::load($term_id);
-    $curr_langcode = \Drupal::languageManager()->getCurrentLanguage(\Drupal\Core\Language\LanguageInterface::TYPE_CONTENT)->getId();
-    $taxonomy_term_trans = \Drupal::service('entity.repository')->getTranslationFromContext($term, $curr_langcode);
-    $variables['title_new'] = $taxonomy_term_trans->getName();
-  }
+		$variables['breadcrumb'][] = array(
+			'text' => $node->getTitle(),
+			'url' => $node->URL()
+		);
+ 		$variables['#cache']['contexts'][] = 'url';
+	}
 }
 
 /**
