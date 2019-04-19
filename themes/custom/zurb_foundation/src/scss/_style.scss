@@ -1186,6 +1186,9 @@ body {
   width: 27px;
   padding-left: 27px;
   height: 27px;
+  @media ($sm) {
+    display: none;
+  }
   input {
     padding-left: 10px;
   }

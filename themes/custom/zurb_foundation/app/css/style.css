@@ -4230,6 +4230,13 @@ body
 
     background: url(../img/sprite.png) 27px -4px;
 }
+@media (max-width: 991px)
+{
+    .block-views-exposed-filter-blockfrontpage-partners
+    {
+        display: none;
+    }
+}
 .block-views-exposed-filter-blockfrontpage-partners input
 {
     padding-left: 10px;
