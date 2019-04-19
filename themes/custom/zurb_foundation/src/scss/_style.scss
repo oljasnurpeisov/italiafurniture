@@ -810,9 +810,14 @@
     margin-left: 0; }
 
 /** Pagination **/
+.pager {
+  display: inline-block;
+  width: 100%;
+}
 .pagination {
-  margin-left:0;
-  margin-bottom:1rem;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 1rem;
   text-align: center;
 }
 .pagination::before, .pagination::after {
@@ -844,10 +849,10 @@
 }
 .pagination li:hover, .pagination button:hover {
   padding:.1875rem .625rem;
-  background:#e6e6e6;
+  background: #e5b963;
 }
 .pagination .current {
-  background:#b5b4bb;
+  background: #efce8d;
   color:#fefefe;
   cursor:default
 }

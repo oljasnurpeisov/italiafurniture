@@ -3640,10 +3640,18 @@ body:after
 }
 
 /** Pagination **/
+.pager
+{
+    display: inline-block;
+
+    width: 100%;
+}
+
 .pagination
 {
     margin-bottom: 1rem;
     margin-left: 0;
+    padding-left: 0;
 
     text-align: center;
 }
@@ -3703,7 +3711,7 @@ body:after
 {
     padding: .1875rem .625rem;
 
-    background: #e6e6e6;
+    background: #e5b963;
 }
 
 .pagination .current
@@ -3711,7 +3719,7 @@ body:after
     cursor: default; 
 
     color: #fefefe;
-    background: #b5b4bb;
+    background: #efce8d;
 }
 
 .pagination .disabled
