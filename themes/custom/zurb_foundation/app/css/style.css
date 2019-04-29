@@ -4269,6 +4269,11 @@ body
     margin-bottom: 20px;
 }
 
+.show_contactblock
+{
+    cursor: pointer;
+}
+
 .mCustomScrollbar
 {
     touch-action: pinch-zoom;
