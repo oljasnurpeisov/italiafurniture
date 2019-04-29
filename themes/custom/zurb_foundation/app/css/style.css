@@ -2199,6 +2199,11 @@ body:after
     }
 }
 
+.content_region
+{
+    position: relative;
+}
+
 .catalog
 {
     position: relative;
@@ -4222,7 +4227,7 @@ body
 {
     position: absolute;
     z-index: 10001;
-    top: 44px;
+    top: 24px;
 
     width: 27px;
     height: 27px; 
