@@ -1205,3 +1205,10 @@ body {
     margin-bottom: 20px;
   }
 }
+.owl-carousel {
+  .owl-item {
+    img {
+      height: auto;
+    }
+  }
+}
