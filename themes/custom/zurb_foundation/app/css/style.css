@@ -2895,7 +2895,7 @@ body:after
 .service
 {
     padding-top: 10px;
-    padding-bottom: 150px;
+    padding-bottom: 20px;
 }
 
 .service-info
@@ -2978,6 +2978,8 @@ body:after
 
     width: 30%;
     margin: 0 20px; 
+    margin-right: auto;
+    margin-left: auto;
 
     cursor: pointer;
     transition: .3s;
