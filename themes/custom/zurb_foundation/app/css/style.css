@@ -2335,6 +2335,20 @@ body:after
     width: 100%;
     max-height: 153px;
 }
+@media (max-width: 991px)
+{
+    .catalog-item__img img
+    {
+        max-height: 200px !important;
+    }
+}
+@media (max-width: 767px)
+{
+    .catalog-item__img img
+    {
+        max-height: 250px !important;
+    }
+}
 
 .block-views-block-catalog-block-1 .catalog-item
 {

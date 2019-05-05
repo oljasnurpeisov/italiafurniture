@@ -119,6 +119,12 @@
     img{
       width: 100%;
       max-height: 153px;
+      @media ($sm) {
+        max-height: 200px!important;
+      }
+      @media ($xs) {
+        max-height: 250px!important;
+      }
     }
   }
 }
