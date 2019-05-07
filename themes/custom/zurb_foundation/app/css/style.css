@@ -6142,6 +6142,7 @@ yx-axis
     .header
     {
         position: fixed;
+        z-index: 10;
         top: 0; 
 
         width: 100%;
@@ -6265,6 +6266,7 @@ yx-axis
 .header-logo
 {
     position: absolute;
+    z-index: 10;
     right: 50%;
 
     float: left;
@@ -6563,6 +6565,38 @@ yx-axis
     font-size: 22px; 
 
     color: #f7dfa5;
+}
+
+ul.mobile-soc-links
+{
+    font-size: 20px;
+
+    position: absolute;
+    z-index: 999; 
+    top: -5px;
+    right: 15px;
+
+    display: none;
+
+    padding: 0;
+
+    list-style: none;
+
+    color: #dab55e;
+}
+
+ul.mobile-soc-links li
+{
+    /*display: inline-block;*/
+    margin-right: 5px;
+}
+
+@media (max-width: 767px)
+{
+    ul.mobile-soc-links
+    {
+        display: block;
+    }
 }
 
 .aside-news
