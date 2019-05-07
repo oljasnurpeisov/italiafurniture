@@ -75,6 +75,9 @@
             <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
               <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
             </a>
+
+
+
           {% endif %}
           <div class="logo-info logo-info--right">
             <div class="logo-info__title">{{ drupal_field('title', 'node', 26) }}</div>
@@ -91,5 +94,13 @@
   {% endif %}
 
   {% if block.delta != 'main' %}
+
+
+  <ul class="mobile-soc-links">
+      <li><a target="_blank" href="tel:+79649473005" tabindex="-1"><i class="fa fa-phone"></i></a></li>      
+      <li><a target="_blank" href="https://vk.com/club126212500" tabindex="-1"><i class="fab fa-vk"></i></a></li>
+      <li><i class="show_contactblock far fa-envelope"></i></li>
+  </ul>
+  
 </section>
 {% endif %}
