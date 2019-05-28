@@ -1192,7 +1192,10 @@ body {
   padding-left: 27px;
   height: 27px;
   @media ($sm) {
-    display: none;
+    top: 0px;
+    left: 0;
+    right: 200px;
+    margin: auto;
   }
   input {
     padding-left: 10px;
@@ -1212,4 +1215,9 @@ body {
 }
 .show_contactblock {
   cursor: pointer;
+}
+.block-system-main-block {
+  @media ($sm) {
+    padding-top: 10px;
+  }
 }

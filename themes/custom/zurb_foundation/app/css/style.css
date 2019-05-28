@@ -4241,7 +4241,11 @@ body
 {
     .block-views-exposed-filter-blockfrontpage-partners
     {
-        display: none;
+        top: 0;
+        right: 200px;
+        left: 0;
+
+        margin: auto;
     }
 }
 .block-views-exposed-filter-blockfrontpage-partners input
@@ -4279,6 +4283,14 @@ body
 .show_contactblock
 {
     cursor: pointer;
+}
+
+@media (max-width: 991px)
+{
+    .block-system-main-block
+    {
+        padding-top: 10px;
+    }
 }
 
 .mCustomScrollbar
